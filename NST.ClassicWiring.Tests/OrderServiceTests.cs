@@ -10,7 +10,7 @@ namespace NST.ClassicWiring.Tests
         [TestMethod]
         public void OrderService_EnsureWeCanSaveAnOrder_BasicScenario()
         {
-            ///No way we can create stub/mock 
+            ///No way we can create our stub/mock 
             OrderService orderService = new OrderService();
             Order order = new Order();
             orderService.AcceptOrder(order);
