@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NST.Abstractions\NST.Abstractions.csproj" />
+    <ProjectReference Include="..\NST.DBConnector\NST.DBConnector.csproj" />
+    <ProjectReference Include="..\NST.DomainModel\NST.DomainModel.csproj" />
+    <ProjectReference Include="..\NST.XMLConnector\NST.XMLConnector.csproj" />
+  </ItemGroup>
+
+</Project>
