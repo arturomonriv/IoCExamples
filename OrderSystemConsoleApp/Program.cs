@@ -1,5 +1,8 @@
 ﻿using Autofac;
 using NST.Abstractions;
+using NST.DBConnector;
+using NST.DomainModel;
+using NST.XMLConnector;
 using System;
 
 namespace OrderSystemConsoleApp
@@ -28,18 +31,21 @@ namespace OrderSystemConsoleApp
 
         private static CommandConfig ConfigureCommand(string[] args)
         {
-            throw new NotImplementedException();
+            return new CommandConfig();
         }
 
         private static void InitializeContainer()
         {
-            var containerBuilder = new ContainerBuilder();
+            var builder = new ContainerBuilder();
+            RegisterModules(builder);
+            AppContainer = builder.Build();
+        }
 
-            containerBuilder.RegisterType<OrderService>()
-                .As<IOrderService>()
-                .InstancePerLifetimeScope();
-
-            AppContainer = containerBuilder.Build();
+        private static void RegisterModules(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyModules<AutofacOrderSystemModule>();
+            builder.RegisterAssemblyModules<AutofacDbConnectorModule>();
+            builder.RegisterModule<AutofacXmlConnectorModule>();
         }
     }
 }
