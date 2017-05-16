@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NST.Abstractions\NST.Abstractions.csproj" />
     <ProjectReference Include="..\NST.DomainModel\NST.DomainModel.csproj" />
   </ItemGroup>

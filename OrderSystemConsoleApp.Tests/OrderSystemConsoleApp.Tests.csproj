@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="Moq" Version="4.7.10" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.17" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.17" />
   </ItemGroup>
@@ -13,7 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NST.Abstractions\NST.Abstractions.csproj" />
     <ProjectReference Include="..\NST.DomainModel\NST.DomainModel.csproj" />
-    <ProjectReference Include="..\NST.WiringUsingConstructorInjection\NST.WiringUsingConstructorInjection.csproj" />
+    <ProjectReference Include="..\OrderSystemConsoleApp\OrderSystemConsoleApp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
