@@ -13,20 +13,12 @@ namespace OrderSystemConsoleApp
 
         static void Main(string[] args)
         {
-            try
-            {
-                InitializeContainer();
+            InitializeContainer();
 
-                CommandConfig config = ConfigureCommand(args);
+            CommandConfig config = ConfigureCommand(args);
 
-                var orderSystem = AppContainer.Resolve<IOrderService>();
-                orderSystem.Configure(config.ConnectorType);
-                orderSystem.AddOrder(config.Data);
-            }
-            catch (Exception MainExc)
-            {
-                throw MainExc;
-            }
+            var orderSystem = AppContainer.Resolve<IOrderService>();
+            orderSystem.AddOrder(config.Data);
         }
 
         private static CommandConfig ConfigureCommand(string[] args)

@@ -10,14 +10,12 @@ namespace OrderSystemConsoleApp
     {
         private Func<ConnectorType, IOrderSaver> _OrderSaverFactory;
         private ConnectorType _ConnectorType;
-
-
-        public OrderService(Func<ConnectorType, IOrderSaver> orderSaverFactory)
+        
+        public OrderService(Func<ConnectorType, IOrderSaver> orderSaverFactory, ConnectorType connectorType)
         {
             OrderSaverFactory = orderSaverFactory;
+            ConnectorType = connectorType;
         }
-
-
         
         private Func<ConnectorType, IOrderSaver> OrderSaverFactory
         {
@@ -25,11 +23,7 @@ namespace OrderSystemConsoleApp
             set { _OrderSaverFactory = value; }
         }
 
-        private ConnectorType ConnectorType
-        {
-            get { return _ConnectorType; }
-            set { _ConnectorType = value; }
-        }
+        private ConnectorType ConnectorType { get; set; }
 
         public void AddOrder(Order order)
         {
@@ -38,9 +32,5 @@ namespace OrderSystemConsoleApp
             orderSaver.Save(order);
         }
 
-        public void Configure(ConnectorType connectorType)
-        {
-            ConnectorType = connectorType;
-        }
     }
 }

@@ -7,8 +7,6 @@ namespace NST.Abstractions
 {
     public interface IOrderService
     {
-        void Configure(ConnectorType connectorType);
-
         void AddOrder(Order order);
     }
 }
