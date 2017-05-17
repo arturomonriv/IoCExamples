@@ -17,12 +17,12 @@ namespace OrderSystemConsoleApp
                 .InstancePerLifetimeScope();
 
             builder.Register<Func<ConnectorType, IOrderSaver>>(c =>
-            {
-                var componentContext = c.Resolve<IComponentContext>();
-                return (reportType) => {
-                    return componentContext.ResolveKeyed<IOrderSaver>(reportType);
-                };
-            }).InstancePerLifetimeScope();
+                {
+                    var componentContext = c.Resolve<IComponentContext>();
+                    return (reportType) => {
+                        return componentContext.ResolveKeyed<IOrderSaver>(reportType);
+                    };
+                }).InstancePerLifetimeScope();
         }
     }
 }
