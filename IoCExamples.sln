@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NST.Abstractions", "NST.Abstractions\NST.Abstractions.csproj", "{16FB3155-EF57-44B5-8167-449FEACF6CFE}"
 EndProject
@@ -44,6 +44,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSystemConsoleApp", "OrderSystemConsoleApp\OrderSystemConsoleApp.csproj", "{7076CF22-F639-4DFE-B2F6-D782390C9BB0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSystemConsoleApp.Tests", "OrderSystemConsoleApp.Tests\OrderSystemConsoleApp.Tests.csproj", "{52717EB0-E1D0-4074-8A1F-131576FA9B25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppCompositionRoot", "WebAppCompositionRoot\WebAppCompositionRoot.csproj", "{9A57A6CA-23E1-4F62-B5E4-66666B425AEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{52717EB0-E1D0-4074-8A1F-131576FA9B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52717EB0-E1D0-4074-8A1F-131576FA9B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52717EB0-E1D0-4074-8A1F-131576FA9B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A57A6CA-23E1-4F62-B5E4-66666B425AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A57A6CA-23E1-4F62-B5E4-66666B425AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A57A6CA-23E1-4F62-B5E4-66666B425AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A57A6CA-23E1-4F62-B5E4-66666B425AEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

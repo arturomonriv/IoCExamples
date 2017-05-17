@@ -7,9 +7,16 @@ namespace WebAppCompositionRoot.MyTypes
 {
     public class MovieManager : IMovieManager
     {
+        private readonly IMovieRepository repository;
+
+        public MovieManager(IMovieRepository repository)
+        {
+            this.repository = repository;
+        }
+
         public IReadOnlyList<Movie> GetMovies()
         {
-            return Array.Empty<Movie>();
+            return repository.GetList();
         }
     }
 }
