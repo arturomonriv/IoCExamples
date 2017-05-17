@@ -35,7 +35,7 @@ namespace OrderSystemConsoleApp
 
         private static void RegisterModules(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyModules<AutofacOrderSystemModule>();
+            builder.RegisterModule(new AutofacOrderSystemModule() { DefaultConnector = ConnectorType.Xml });
             builder.RegisterAssemblyModules<AutofacDbConnectorModule>();
             builder.RegisterModule<AutofacXmlConnectorModule>();
         }

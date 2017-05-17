@@ -13,7 +13,7 @@ namespace NST.DBConnector
         {
             builder.RegisterType<DBOrderSaver>()
                 .As<IOrderSaver>()
-                .Keyed<ConnectorType>(ConnectorType.Db)
+                .Keyed<IOrderSaver>(ConnectorType.Db)
                 .InstancePerLifetimeScope();
         }
     }

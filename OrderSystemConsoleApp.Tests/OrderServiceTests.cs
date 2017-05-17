@@ -12,6 +12,7 @@ namespace OrderSystemCommandApp.Tests
     public class OrderServiceTests
     {
         [TestMethod]
+        [TestCategory("OrderSystem")]
         public void When_AddingOrder_SaverShouldSaveOrder()
         {
             var orderSaver = new Mock<IOrderSaver>();
@@ -21,15 +22,21 @@ namespace OrderSystemCommandApp.Tests
                     return orderSaver.Object;
                 };
 
-            IOrderService orderService = new OrderService(SaverFactory);
-
-            orderService.Configure(ConnectorType.Db);
+            IOrderService orderService = new OrderService(SaverFactory, ConnectorType.Xml);
             var orderItem = new Order() { Id = 2, Name = "OrderXYZ" };
 
             orderService.AddOrder(orderItem);
 
             Assert.IsInstanceOfType(orderService, typeof(OrderService));
             orderSaver.Verify(x => x.Save(orderItem));
+        }
+
+        [TestMethod]
+        [TestCategory("OrderSystem")]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void When_InvalidDependencies_MustThrowException()
+        {
+            IOrderService orderService = new OrderService(null, null);
         }
     }
 }

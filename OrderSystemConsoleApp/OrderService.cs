@@ -9,25 +9,29 @@ namespace OrderSystemConsoleApp
     public class OrderService : IOrderService
     {
         private Func<ConnectorType, IOrderSaver> _OrderSaverFactory;
-        private ConnectorType _ConnectorType;
         
-        public OrderService(Func<ConnectorType, IOrderSaver> orderSaverFactory, ConnectorType connectorType)
+        public OrderService(Func<ConnectorType, IOrderSaver> orderSaverFactory, ConnectorType? connectorType)
         {
             OrderSaverFactory = orderSaverFactory;
-            ConnectorType = connectorType;
+            Connector = connectorType;
         }
         
         private Func<ConnectorType, IOrderSaver> OrderSaverFactory
         {
             get { return _OrderSaverFactory; }
-            set { _OrderSaverFactory = value; }
+            set
+            {
+                _OrderSaverFactory = value ?? throw new ArgumentNullException("Order saver factory cannot be null.");
+            }
         }
 
-        private ConnectorType ConnectorType { get; set; }
+        private ConnectorType? Connector { get; set; }
 
         public void AddOrder(Order order)
         {
-            IOrderSaver orderSaver = OrderSaverFactory(ConnectorType);
+            ConnectorType defaultConnector = Connector.HasValue ? Connector.Value : ConnectorType.Db;
+
+            IOrderSaver orderSaver = OrderSaverFactory(defaultConnector);
 
             orderSaver.Save(order);
         }

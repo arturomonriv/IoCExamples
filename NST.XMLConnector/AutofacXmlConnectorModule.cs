@@ -7,13 +7,13 @@ using System.Text;
 
 namespace NST.XMLConnector
 {
-    public sealed class AutofacXmlConnectorModule : Module
+    public class AutofacXmlConnectorModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<XMLOrderSaver>()
                 .As<IOrderSaver>()
-                .Keyed<ConnectorType>(ConnectorType.Xml)
+                .Keyed<IOrderSaver>(ConnectorType.Xml)
                 .InstancePerLifetimeScope();
         }
     }
