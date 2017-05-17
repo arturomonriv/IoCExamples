@@ -30,8 +30,10 @@ namespace WebAppCompositionRoot
             // Add framework services.
             services.AddMvc();
 
-            services.AddScoped<MyTypes.IMovieManager>((x) => { return new MyTypes.MovieManager(); });
-            
+            //Here is where we register our services
+            services.AddScoped(typeof(MyTypes.IMovieManager), typeof(MyTypes.MovieManager));
+            services.AddScoped(typeof(MyTypes.IMovieRepository), typeof(MyTypes.MovieRepository));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

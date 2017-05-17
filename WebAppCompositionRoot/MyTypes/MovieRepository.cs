@@ -22,7 +22,7 @@ namespace WebAppCompositionRoot.MyTypes
 
             movie = new Movie();
             movie.Id = 3;
-            movie.Name = "Chabelo y Pepito contra los monstruos";
+            movie.Name = "Chabelo y Pepito";
             movies[2] = movie;
 
             return movies;
